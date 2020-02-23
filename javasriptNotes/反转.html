@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			reverseNum(549)
+
+			function reverseNum(num) {
+				var ge = num % 10 // 9
+				var b = num - ge // 540
+				var c = b / 10 // 54
+				var shi = c % 10 //4
+				var d = c - shi //50
+				var bai = d / 10 //5
+
+				var result = ge + "" + shi + bai
+				alert(result)
+			}
+		</script>
+	</body>
+</html>

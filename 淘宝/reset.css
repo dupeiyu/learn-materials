@@ -1,0 +1,70 @@
+body,p,h1,h2,h3,h4{
+	margin:0;
+	/* background: blueviolet; */
+}
+/* 标签身上有的属性才进行重置,没有的不需要重置 */
+ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+img{
+	border: none;
+	vertical-align: middle;/* 在图片引入的过程中底部会有空隙 */
+}
+/* 在IE浏览器中border会显示出来,在谷歌或者其他浏览器中不会显示 */
+a{
+	text-decoration: none;
+	color:#3c3c3c;
+}
+i{
+	font-style: normal;
+}
+input{
+	margin: 0;
+	padding: 0;
+}
+button{
+	outline:none;
+} /* 去掉蓝色聚焦框 */
+body{
+	font:12px/1.5 tahoma,arial,'hiragino Sans GB','\5b8b\4f53',sans-serif;
+/*设置字体，1.5——行高，行高的表示方法：line-height:normal(浏览器和字体的大小决定其大小)\1.5\200%\50px（绝对单位，固定值）\5em 
+行高计算16*200%/16*5em/16*1.5  但是一般都使用数字，因为使用数字时，子元素可以继承父元素的字体大小，具体见笔记本*/
+/* '\5b8b\4f53'-unicode编码,字符集 表示宋体 宋体的写法：'宋体'/ '\5b8b\4f53'/simsun*/
+color:#3C3C3C;
+background-color: #f4f4f4;
+}
+.clearfix:after{
+	content: '';
+	display:block;
+	clear:both;
+}
+.fr{
+	float: right;
+}
+.fl{
+	float: left;
+}
+.layer{
+	width:1190px;/* 在这里设定宽度是因为页面中有很多居中的排布,比如导航栏 */
+	margin:0 auto;
+}
+.c4{
+	color:#f40;
+}
+.c5{
+	color: #f50;
+}
+.mr7{
+	margin-right: 7px;
+}
+.mr5{
+	margin-right: 5px;
+}
+.mt10{
+	margin-top: 10px;
+}
+.mr10{
+	margin-right: 10px;
+}

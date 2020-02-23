@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			body{
+				margin: 0;
+				
+			}
+			.box {
+				float: left;
+				position: absolute;
+				width: 100px;
+				height: 100%;
+				background-color: gray;
+			}
+
+			.demo {
+				float: right;
+				position: absolute;
+				right:0;
+				width: 150px;
+				height: 100%;
+				/* margin-left: 100px; */
+				background-color: green;
+			}
+
+			.demo1 {
+				/* float: left; */
+				/* width:280px; */
+				/* height: 300px; */
+				position: absolute;
+				/* width: 300px; */
+				width: calc(100% - 250px);
+				bottom: 0;
+				top:0;
+				text-align: center;
+				line-height:300px;
+				margin-left: 100px;
+				margin-right: 150px;
+				/* margin-left: 100px; */
+				background-color: palevioletred;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="A">
+			<div class="box"></div>
+			<div class="demo">11111</div>
+			<div class="demo1"></div>
+		</div>
+	</body>
+</html>

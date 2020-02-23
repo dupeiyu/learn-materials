@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CSSS笔记</title>
+		<!-- 2、页面级css -->
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0
+			}
+
+			#demo {
+				color: blue;
+			}
+
+			.hello {
+				color: yellow !important;
+			}
+
+			.wo {
+				font-size: 100px;
+				font-weight: bold;
+				font-style: italic;
+				font-family: arial;
+				color: #0000FF;
+
+			}
+
+			[id="demo0"] {
+				font-size: 20px
+			}
+
+			.demo1 {
+				border: 100px solid transparent;
+				border-right-color: brown;
+				border-bottom-color: goldenrod;
+				border-top-color: gray;
+				border-left-width: 50px;
+				width: 100px;
+				height: 100px;
+				/* background-color: #808080; */
+			}
+
+			.demo2 {
+				border: 10px solid black;
+				text-align: left;
+				height: 100px;
+				line-height: 50px;
+				/*当单行文本高度等于容器高度时,文本居中*/
+				padding-bottom: 100px;
+				text-indent: 2em;
+				/*1em=1font-size*/
+			}
+
+			/* 伪类选择器 */
+			.demo3:hover {
+				background-color: #DAA520;
+				font-size: 30px;
+			}
+
+			em {
+				font-style: normal;
+				color: #c00;
+			}
+
+			ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+
+			.demo4 {
+				position: relative;
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				padding: 100px 150px 200px 220px;
+				/* 上     右     下    左 */
+				padding: 100px 150px 200px;
+				/* 上     左右     下 */
+				padding: 50px 60px;
+				/* 上下     左右 */
+			}
+
+			.demo5 {
+				position: absolute;
+				width: 150px;
+				height: 150px;
+				background-color: green;
+				margin: 10px;
+			}
+
+			.par {
+				margin: 0 auto;
+				width: 300px;
+				height: 300px;
+				background: black;
+			}
+
+			.demo6 {
+				position: absolute;
+			/* 	left:100px; */
+				right:100px;
+				/* top/bottom */
+				width: 100px;
+				height: 100px;
+				background-color:greenyellow;
+				margin: 10px;
+				/* body默认的margine是8像素 */
+		</style>
+		<!-- 3、外部css文件 -->
+		<link rel="stylesheet" type="text/css" href="">
+	</head>
+	<body>
+		<!-- 一、引入css：-->
+		<!-- 1、行间样式 -->
+		<div style="
+			width: 100px;
+			height=100px;
+			background-color: red;
+		">
+		</div>
+		<!-- 1、id选择器，#only{css属性}，一个id只有一个属性 -->
+		<div id="only">
+			something
+		</div>
+		<!-- 2、class选择器 .demo={css属性}-->
+		<div class="demo">
+			something
+		</div>
+		<!-- 3、标签选择器 div{css属性} -->
+		<!-- 4、通配符 *{css属性，作用于所有标签} -->
+		<!-- 5、父子子选择器 div span{ css属性} -->
+		<div>
+			<span>1</span>
+		</div>
+		<span>2</span>
+		<!-- 6、直接元素选择器 div > em{css属性}-->
+		<div>
+			<em>123</em>
+			<strong>
+				<em>234</em>
+			</strong>
+		</div>
+		<!-- 7、分组选择器 em,span,strong{css属性}-->
+		<em>1</em>
+		<span>2</span>
+		<strong>3</strong>
+		<!-- 8、！important 写在属性后面 -->
+		<span id="demo" class="hello">兔子</span>
+		<!--9、属性选择器 -->
+		<span id="demo0">兔子</span>
+		<div class="wo">
+			我是天才
+		</div>
+		<div class="demo1">
+		</div>
+		<div class="demo2">
+			记得早先少年时　大家诚诚恳恳
+			说一句 是一句
+			　　 清早上火车站
+			　　 长街黑暗无行人
+			　　卖豆浆的小店冒着热气
+
+			　　从前的日色变得慢
+			　　车，马，邮件都慢
+			　　一生只够爱一个人
+
+			　　从前的锁也好看
+			　　钥匙精美有样子
+			　　你锁了 人家就懂了
+		</div>
+		<p style="text-decoration:line-through;">原价50元</p>
+		<a href="http://www.baidu.com" style="text-decoration:none">百度</a> <!-- none/underline/line-through/overline -->
+		<span style="cursor:pointer">www.baidu.com</span>
+		<span class="demo3" style="cursor:help">www.baidu.com</span>
+		<div style="display:inline;width:100px;height:100px;background-color: #0000FF;">年号</div>
+		<br>
+		<!-- 凡是带有inline的元素，都有文字特性，如自动空格（40像素） -->
+		<img src="../htmlNotes/J23A5993.jpg" style="width:100px;height:150px">
+		<img src="../htmlNotes/J23A5993.jpg" style="width:100px;height:150px">
+		<img src="../htmlNotes/J23A5993.jpg" style="width:100px;height:150px">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<em>习近平</em>
+		<!-- 通配符*选择器，初始化所有标签的最好方式 -->
+		<!-- 盒子模型：外边距(margine)/盒子壁（border）/内边距(padding)/盒子内容(width+height) -->
+		<div class="demo4">
+			<div class="demo5">
+			</div>
+		</div>
+		<br>
+		<div class="par">
+			<div class="chi"></div>
+		</div>
+		盒模型：realwidth:
+		realheight:
+		写远视图
+		<!-- absolute绝对定位：相对于最近的有定位的父级进行定位，如果没有父级，那么相对于文档进行定位。脱离原来位置进行定位，层元素。
+		/ralative相对定位，相对于自己原来的位置进行定位，保留原来位置进行定位 
+		一般情况下用relative进行参照，用absolute进行定位/fixed，不动定位，例如广告-->
+		
+		<div class="demo6"></div>
+	</body>
+</html>

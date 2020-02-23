@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function sum(a, b) {
+				var c = a + b;
+				document.write(c);
+			}
+			// sum(5,5);
+			function scream(animal) {
+				switch (animal) {
+					case "dog":
+						document.write('wang');
+						return;
+					case "cat":
+						document.write('miao');
+						return;
+					case "frog":
+						document.write('guagua');
+						return;
+				}
+			}
+			// scream('cat');
+			function reverse() {
+				var num = window.prompt('input');
+				var str = "";
+				for (var i = num.length - 1; i >= 0; i--) {
+					str += transfer(num[i]);
+				}
+				document.write(str);
+			}
+
+			function transfer(target) {
+				switch (target) {
+					case "1";
+					return "一";
+					case "2";
+					return "二";
+					case "3";
+					return "三";
+				}
+			}
+
+
+			// 递归
+			function mul(n) {
+				if (n == 1 || n == 0) {
+					return 1;
+				}
+				return 10 * mul(10 - 1);
+			}
+			
+			
+		</script>
+	</body>
+</html>
