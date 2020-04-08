@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var obj = {
+				a: 1
+			}
+			var obj1 = {
+				a: 2
+			}
+
+			function fun(a, b) {
+				console.log(this.a)
+				console.log(a)
+				console.log(b)
+			}
+			fun.bind(obj,10,100)() 
+			fun.bind(obj1, 10, 100)()
+			// fun.call(obj,10, 20)
+			// fun.apply(obj,[10,20])
+		</script>
+	</body>
+</html>

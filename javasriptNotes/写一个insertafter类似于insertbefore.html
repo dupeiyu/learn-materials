@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			Element.prototype.insertAfter = function(targetNode, afterNode) {
+			var beforeNode = afterNode.nextElementsibling;
+			if (beforeNode == null){
+				this.appendChild(targetNode);
+			}else{
+				this.insertBefore(targetNode, beforeNode);
+			}
+			}
+			var div = document.getElementsByTagName("div")[0];
+			var b = document.getElementsByTagName("b")[0];
+			var span = document.getElementsByTagName("span")[0];
+			var p = document.getElementsByTagName("p");
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+
+			function byTestLength(str) {
+				var count = 0;
+				for (var i = 0; i < str.length; i++) {
+					if (str.charCodeAt(i) < 255) {
+						count++;
+					} else {
+						count += 2;
+					}
+				}
+				return count
+			}
+			
+		</script>
+	</body>
+</html>

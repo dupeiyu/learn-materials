@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<p>
+			<!-- <script type="text/javascript">页面级，可以放在head里面，也可以放在body里面</script>
+		<script type="text/javascript" src="外部js文件"></script> -->
+			不可以同时进行内部引用和外部引用，当同时引用时，外部引用生效。
+		</p>
+		<ul>
+			<li>变量（variable）：
+				var a = 10 声明和赋值；
+				a = 20 更换值；</li>
+			<li>变量命名规则：
+				1.变量名必须以英文字母、_、$开头；
+				2.变量名可以包括字母、_、$、数字；
+				3.不可以用系统的关键字、保留字作为变量名；</li>
+			<li>变量的类型(变量的类型由值决定):
+				原始值：1.number（数字）2.string（字符串）3.boolean（布尔true/false）4.undefined（undefined）5.null（null）；
+				原始值是放在栈内的
+				引用值：1.array（数组）2.object（对象）3.function（函数）4.date（日期）5.regExp（正则）
+				引用值可以说放在堆内的
+			</li>
+			<li>
+				js基本语法：
+				1.每一句结束都要加分号（function、for、if可以不加）；
+				2.js语法错误会引起本代码块的后续代码终止，不会影响其他代码块；
+			</li>
+			<li>
+				运算操作符：
+				（1）逻辑非（逻辑运算符）
+				！（表示取反）
+				（2）算术运算符
+				+ — * / % （百分号表示除完余几，例如var a = 10 ; a %= 4(a = a % 4); a = 2）；
+				++(加1) --（减1）；
+				（3）关系运算符（比较ASC码的顺序，一切东西都可以比，但是NAN不等于任何东西，包括自己）
+				大于 小于 大于等于 小于等于 不等于 ==
+				（4）逻辑与和逻辑或
+				&&（遇到假则返回） ||（遇到真则返回）
+				（5）条件（三目运算符）
+				exp1？exp2：exp3（相当于if else，判断问号前面的真假，若问号前面为真则返回exp2，若问号前面为假则返回exp3）
+				（6）赋值运算符
+				= += -= *= /=
+				其中运算符的优先级从上到下依次降低
+			</li>
+			<li>
+				条件语句
+				if(条件){
+				条件成立时执行语句
+				}else if（）{
+
+				}else{
+
+				}
+			</li>
+			<li>
+				for循环
+				for (var i = 0 ; i < 10 ; i ++){ document.write(a); } <!-- 执行顺序： -->
+					1.var i = 0；
+					2.if （i < 10）{ document.write(a); } 3.i ++；（i+1） <!-- 循环三步执行； -->
+			</li>
+			<li>
+				while循环
+				// while循环是for循环的简化版，
+				// never-ending loop 无限循环
+				while（1）{
+				document.write(i);
+				i++;
+				}
+			</li>
+			<li>
+
+				do while 循环
+				var i = 10;
+				do{
+				document.write(a);
+				i++;
+				}while(i < 10) <!-- 无论什么情况都只执行一次 -->
+			</li>
+			<li>
+				switch
+				var date = window.prompt("input");
+				switch(date){
+				case "monday":
+				case "tuesday":
+				case "wednesday":
+				case "thursday":
+				case "friday":
+				console.log("working");
+				break;
+				case "saturday":
+				case "tsunday":
+				console.log("relaxing");
+				break;（若不加break，则每循环一次就会打印出所有的内容，加上break则不会）
+				}
+			</li>
+			<li>
+				break
+				终止循环，必须放在函数里面
+				continue
+				终止本次循环，进行下一次循环
+				for (vat i = 0; i < 100; i++){ if (i % 7==0 || i % 10==7){ continue; } console.log (i); } </li> <li>
+					函数
+					命名函数表达式
+					var test = function abc(形参){
+					arguments与实参列表相对应，会将多余的实参当成数组存起来；
+					}
+					abc(实参)
+					匿名函数表达式
+					var test = function(){}
+			</li>
+			<li>
+				arguments
+				function sum (abc){
+				if(sum.length > arguments.length){
+				console.log("形参多了")；
+				}else if (sum.length < arguments.length){ console.log("实参多了"); }else{ console.log("相等"); } sum（1，2，3） } <!--
+				 实参出生的时候有几个就是几个，只有当形参=实参时，才有映射规则，不等的部分不映射。 -->
+			</li>
+			<li>
+				递归：
+				更好找规律，必须找出口；
+				function mul(n){
+				if(n==1){
+				return 1;
+				}
+				return n*mul(n-1);
+				}
+				mul(5);
+			</li>
+			<li>
+				作用域：
+				全局变量&局部变量；
+				所有的函数都可以访问全局变量，全局不可以访问函数里面的变量；
+				父子关系的函数，里面的可以访问外面的变量，外面的不可以访问里面的变量；
+				兄弟函数之间不可以相互访问；
+				全局变量：凡是未经申明的变量都是全局变量，一切声明的变量全是window属性
+			</li>
+			<li>
+				预编译：预编译发生在函数执行的前一刻。
+				局部预编译过程：
+				1.创建AO对象；
+				2.找函数中的行参和变量声明，将形参和变量声明作为属性名，值为undefined；
+				3.将形参和实参相统一；
+				4.在函数体中找函数声明，将函数名作为AO对象的属性名，值为函数体。
+				全局预编译：
+				1.创建GO；
+				2.找变量声明，将变量声明作为GO属性，值为undefined；
+				3.在函数体中找函数声明，将函数名作为GO对象的属性名，值为函数体。
+			</li>
+			<li>
+				作用域精解
+				【scop】：每个JavaScript函数都是一个对象，对象中有些属性我们可以访问，但有些不可以，这些属性仅供JavaScript引擎存取，[scope]就是其中一个，
+				指的就是我们所说的作用域，其中存储了执行期上下文的集合。
+				执行期上下文：当函数执行时，会创建一个称为执行期上下文的内部对象。一个执行期上下文定义了一个函数执行时的环境，函数每次执行时对应的执行期上下文都是独一无二的，、
+				所以多次调用一个函数会导致创建多个执行期上下文，当函数执行完毕，它所产生的执行期上下文会被销毁。
+				<br>
+				查找变量：从作用域的顶端依次向下查找。
+				<br>
+				作用域链：[scope]中所存储的执行期上下文的集合，这个集合呈链式链接，我们把这种链式链接叫做作用域链。
+			</li>
+			<li>
+				闭包：指有权访问另一个函数作用域中的变量的函数
+				闭包的好处：1.实现共有变量；2.可以做缓存；3.实现封装，属性私有化；4.模块化开发，防止全局污染。
+			</li>
+			<li>
+				立即执行函数/初始化函数：
+				此类函数没有声明，在一次执行过后释放，适合做初始化工作。
+				形式：1.(function(){
+				var a = 123;
+				var b = 234;
+				console.log(a+b);
+				}())
+				推荐使用第一种
+				2.(function(){})();
+
+
+			</li>
+			<li>
+				函数声明，不能被()执行
+				function test(){
+				var test=3;
+				}( )；-不执行；
+				test( )；-执行
+				函数表达式，可以被（)执行
+				var test = function(){
+				console.log("a");
+				}( );-可以被执行
+				能被执行符号执行的表达式，它的函数名会被忽略。
+				例子：
+				function test(){
+				console.log("a");
+				}( );可以被执行
+				function test(a,b,c,d){
+				console.log("a+b+c+d");
+				}(1,2,3,4 );不报错、不执行
+
+			</li>
+			<li>
+				return
+				1.无return,返回undefined；
+				2.有return,后面无内容，返回undefined；
+				3.return后有内容，返回此内容。
+			</li>
+			<li>
+				对象
+				var mrDeng={
+				name:"MrDeng",
+				age:40,
+				health:100,
+				smoke:function(){
+				console.log("i am smoking");
+				mrDeng.health--;
+				}
+				drink:function(){
+				console.log("i am drinking");
+				mrDeng.health++;
+				}
+				}
+				mrDeng.smoke-函数引用；
+				mrDeng.smoke()-函数执行；
+
+				属性的增、删、改、查
+				增加：mrDeng.wife="88"增加属性;
+				删除：Delete mrDeng.age;
+				查找：mrDeng.name;
+				改：mrDeng.name="jicheng"
+				访问没有的属性：undefined
+			</li>
+			<li>
+				对象的创建方法
+				1.var obj={ }
+				2.构造函数创建方法：（1）系统自带的构造函数（object();array();number()）（2）自定义
+				new Object() 返回对象；
+				var obj=new Object();接收
+				var obj=new Object()与var obj= Object()是一样的意思；
+				3.属性的添加
+				Obj.name="hh"
+				Obj.say=function(){}
+				4.构造函数的内部原理：
+				（1）在函数体最前面隐士地加上this={}
+				（2）执行this.XXX=XXX;
+				（3）隐式地返回this.return this
+				5.例子
+				只要有new就会返回对象，而不会返回原始值
+				var str=new String("abcd")
+				var str="abcd"
+				6.undefined和null不能有属性
+			</li>
+			<li>
+				求字符串的字节长度
+				charCodeAt();一个中文占两个字节，一个英文占一个字节；
+				charCodeAt()方法可以返回指定位置字符的unicode编码，这个返回值是0-65535之间的整数。
+				（当返回值<=255时为英文,当返回值>255时为中文）
+			</li>
+			<li>
+				原型
+				1.定义：原型时function对象的一个属性，它定义了构造函数构造出的公共祖先，通过改构造函数产生的对象可以继承该原型的属性和方法，原型也是对象。
+				2.利用函数构造原理特点和概念，可以提取公有属性
+				3.对象如何查看原型-隐式属性_proto_
+				4.对象如何查看对象的构造函数-constructor
+				
+			</li>
+			<li></li>
+		</ul>
+		</p>
+	</body>
+</html>

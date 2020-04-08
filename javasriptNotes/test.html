@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Func() {}
+			Func.prototype.name = "ac"
+			var obj = new Func()
+			obj.age = 12
+
+			console.log(obj)
+
+			// instanceof 用来判断一个构造函数的prototype属性所指向的对象是否存在另外一个要检测对象的原型链上
+			console.log(obj instanceof Func)
+			console.log(obj instanceof Object)
+
+			// hasOwnProperty 属性是否存在于实例对象中
+			console.log(obj.hasOwnProperty("name"))
+			console.log(obj.hasOwnProperty("age"))
+
+			// in 在通过对象能够访问给定属性时返回true,无论该属性存在于实例中还是原型中
+			console.log("name" in obj)
+			console.log("age" in obj)
+
+			// for-in 返回的是所有能够通过对象访问的、可枚举的属性，其中即包含存在于实例中的属性，也包含与存在原型中的属性
+			for (let item in obj) {
+				console.log(item)
+			}
+
+			// Object.keys() 接收一个对象作为参数，返回一个包含所有可枚举属性的字符串数组。
+			console.log(Object.keys(obj))
+
+
+			// propertyIsEnumerable 判断某个属性是否可以枚举
+			console.log(obj.propertyIsEnumerable("name"))
+			console.log(obj.propertyIsEnumerable("age"))
+			
+			// https://blog.csdn.net/qq_41609404/article/details/83622225
+		</script>
+	</body>
+</html>
