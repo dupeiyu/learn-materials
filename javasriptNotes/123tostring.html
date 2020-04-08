@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			console.log(123...tostring());
+		</script>
+		  在JavaScript 规范中规定的数字直接量可以支持四种写法：十进制，二进制整数，八进制整数和十六进制整数。
+		
+		      十进制的 Number 可以带小数，小数点前后部分都可以省略，但是不能同时省略，我们看几个例子：
+		
+		let num1 = 1;
+		let num2 = .01;
+		let num3 = 1.01
+		let num4 = 1.
+		这都是合法的数字直接量。这里就有一个问题，也是我们标题提出的问题，我们看一段代码；
+		
+		console.log(12.toString()); //Uncaught SyntaxError: Invalid or unexpected token
+		这时候12. 会被当做省略了小数点后面部分的数字而看成一个整体就是上图中的num4形式，所以我们要想让点单独成为一个 token，就要加入空格，这样就可以了
+		
+		console.log(12 .toString()); //12
+		相信你看着这，应该明白原因了，具体原理请看js的编译原理
+		————————————————
+		版权声明：本文为CSDN博主「qq_39985511」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+		原文链接：https://blog.csdn.net/qq_39985511/article/details/94749704
+	</body>
+</html>
