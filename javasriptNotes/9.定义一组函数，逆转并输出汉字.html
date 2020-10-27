@@ -6,26 +6,27 @@
 	</head>
 	<body>
 		<script type="text/javascript">
-			function reverse(){
+			function reverse() {
 				var num = window.prompt("input");
 				var str = "";
-				for (var i = num.length ; i >= 0 ; i-- ){
+				for (var i = num.length - 1; i >= 0; i--) {
 					str = str + transfer(num[i]);
-				}document.write(str);
+				}
+				document.write(str);
 			}
 			reverse();
-			function transfer(target){
-				switch(target){
-					case"1":
-					return"一";
-					case"2":
-					return"贰";
-					case"3":
-					return"叁";
+
+			function transfer(target) {
+				switch (target) {
+					case "1":
+						return "壹";
+					case "2":
+						return "贰";
+					case "3":
+						return "叁";
 				}
 			}
-			 transfer();
-			
+			transfer();
 		</script>
 	</body>
 </html>
